@@ -1,28 +1,23 @@
 # NEW WAITING LIST FOR TYLER'S HOME TEXAS RUSTIC DESIGN GROUP
+# Collect customer information
+customer_name = input("Enter customer's name: ")
+customer_email = input("Enter customer's email: ")
+customer_phone = input("Enter customer's phone number: ")
 
-waiting_list = []
+# Store customer information in a tuple
+customer_info = (customer_name, customer_email, customer_phone)
 
-def add_to_waiting_list(name, contact_info):
-    waiting_list.append({"name": name, "contact_info": contact_info})
-    print(f"{name} has been added to the waiting list.")
+# Add customer information to the waiting list
+waiting_list.append(customer_info)
 
-def remove_from_waiting_list(name):
-    for customer in waiting_list:
-        if customer["name"] == name:
-            waiting_list.remove(customer)
-            print(f"{name} has been removed from the waiting list.")
-            return
-    print(f"{name} was not found in the waiting list.")
+print("Customer added to the waiting list.")
+# Sign up for "Are You Home Yet?" updates
+signup_choice = input("Would you like to sign up for 'Are You Home Yet?' updates? (yes/no): ").lower()
 
-def display_waiting_list():
-    if not waiting_list:
-        print("The waiting list is currently empty.")
-    else:
-        print("Current Waiting List:")
-        for index, customer in enumerate(waiting_list, 1):
-            print(f"{index}. {customer['name']} - {customer['contact_info']}")
-      
-
-
-
+if signup_choice == 'yes':
+    print("Great! You've been signed up for 'Are You Home Yet?' updates.")
+    # Here you would typically add code to handle the signup process,
+    # such as adding the customer to a mailing list or database
+else:
+    print("No problem. You can always sign up for updates later.")
 
